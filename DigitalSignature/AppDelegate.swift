@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  DigitalSignature
 //
-//  Created by Apple3 on 22/11/18.
+//  Created by Simran on 22/11/18.
 //  Copyright © 2018 Simran. All rights reserved.
 //
 

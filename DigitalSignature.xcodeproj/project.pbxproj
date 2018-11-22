@@ -12,6 +12,9 @@
 		181F778721A6C30700ABDEEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181F778521A6C30700ABDEEF /* Main.storyboard */; };
 		181F778921A6C30800ABDEEF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181F778821A6C30800ABDEEF /* Assets.xcassets */; };
 		181F778C21A6C30800ABDEEF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 181F778A21A6C30800ABDEEF /* LaunchScreen.storyboard */; };
+		181F779421A6D2FC00ABDEEF /* SignatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F779321A6D2FC00ABDEEF /* SignatureView.swift */; };
+		181F779621A6D48500ABDEEF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F779521A6D48500ABDEEF /* UIView+Extension.swift */; };
+		181F779821A6D73500ABDEEF /* SignatureManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181F779721A6D73500ABDEEF /* SignatureManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		181F778821A6C30800ABDEEF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		181F778B21A6C30800ABDEEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		181F778D21A6C30800ABDEEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		181F779321A6D2FC00ABDEEF /* SignatureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureView.swift; sourceTree = "<group>"; };
+		181F779521A6D48500ABDEEF /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		181F779721A6D73500ABDEEF /* SignatureManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignatureManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +60,65 @@
 		181F778021A6C30700ABDEEF /* DigitalSignature */ = {
 			isa = PBXGroup;
 			children = (
+				181F779921A6DE2500ABDEEF /* Support */,
 				181F778121A6C30700ABDEEF /* AppDelegate.swift */,
-				181F778321A6C30700ABDEEF /* ViewController.swift */,
-				181F778521A6C30700ABDEEF /* Main.storyboard */,
+				181F779C21A6DE9C00ABDEEF /* Model */,
+				181F779D21A6DEAF00ABDEEF /* Controller */,
+				181F779E21A6DEC200ABDEEF /* View */,
 				181F778821A6C30800ABDEEF /* Assets.xcassets */,
-				181F778A21A6C30800ABDEEF /* LaunchScreen.storyboard */,
 				181F778D21A6C30800ABDEEF /* Info.plist */,
 			);
 			path = DigitalSignature;
+			sourceTree = "<group>";
+		};
+		181F779921A6DE2500ABDEEF /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				181F779B21A6DE8400ABDEEF /* Signature Manager */,
+				181F779A21A6DE3600ABDEEF /* Extension */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		181F779A21A6DE3600ABDEEF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				181F779521A6D48500ABDEEF /* UIView+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		181F779B21A6DE8400ABDEEF /* Signature Manager */ = {
+			isa = PBXGroup;
+			children = (
+				181F779721A6D73500ABDEEF /* SignatureManager.swift */,
+			);
+			path = "Signature Manager";
+			sourceTree = "<group>";
+		};
+		181F779C21A6DE9C00ABDEEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				181F779321A6D2FC00ABDEEF /* SignatureView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		181F779D21A6DEAF00ABDEEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				181F778321A6C30700ABDEEF /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		181F779E21A6DEC200ABDEEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				181F778A21A6C30800ABDEEF /* LaunchScreen.storyboard */,
+				181F778521A6C30700ABDEEF /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +194,9 @@
 			files = (
 				181F778421A6C30700ABDEEF /* ViewController.swift in Sources */,
 				181F778221A6C30700ABDEEF /* AppDelegate.swift in Sources */,
+				181F779821A6D73500ABDEEF /* SignatureManager.swift in Sources */,
+				181F779621A6D48500ABDEEF /* UIView+Extension.swift in Sources */,
+				181F779421A6D2FC00ABDEEF /* SignatureView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,7 +342,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DigitalSignature/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -290,6 +351,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.preet27k.expandTrack.DigitalSignature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -299,7 +361,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = DigitalSignature/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -307,6 +370,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.preet27k.expandTrack.DigitalSignature;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
